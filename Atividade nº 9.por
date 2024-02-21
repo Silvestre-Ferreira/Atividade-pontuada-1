@@ -1,30 +1,29 @@
-programa
-{
+programa {
 	
-	funcao inicio()
-	{
-	real rendaMensal, valorEmprestimo, prestacoes, valorPrestacao
-
-	// Entrada de dados
-	escreva("Digite a renda mensal: ")
-	leia(rendaMensal)
-	
-	escreva("Digite o valor total do empréstimo: ")
-	leia(valorEmprestimo)
-	
-	escreva("Digite o número de prestações: ")
-	leia(prestacoes)
-
-	escreva("Digite o valor das prestações mensais: ")
-	leia(valorPrestacao)
+	funcao inicio() {
+		real rendaMensal
+		real valorEmprestimo
+		inteiro numPrestacoes
 		
-	// Verificação se o empréstimo pode ser concedido
-	se ((valorEmprestimo <= 10 * rendaMensal) e (valorPrestacao <= 0.43 * rendaMensal)){
-	    escreva("Empréstimo concedido!")
-	}
-	senao{
-	    escreva("Empréstimo não pode ser concedido.")
-	}
+		escreva("Digite a renda mensal do solicitante: R$ ")
+		leia(rendaMensal)
+		
+		escreva("Digite o valor total do empréstimo solicitado: R$ ")
+		leia(valorEmprestimo)
+		
+		escreva("Digite o número de prestações desejadas: ")
+		leia(numPrestacoes)
+		
+		real valorPrestacao = valorEmprestimo / numPrestacoes
+		
+		real limiteValorEmprestimo = rendaMensal * 10
+		real limiteValorPrestacao = rendaMensal * 0.3
+		
+		se (valorEmprestimo <= limiteValorEmprestimo e valorPrestacao <= limiteValorPrestacao) {
+			escreva("Empréstimo concedido!")
+		} senao {
+			escreva("Empréstimo não pode ser concedido.")
+		}
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -32,7 +31,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 0; 
+ * @POSICAO-CURSOR = 704; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
